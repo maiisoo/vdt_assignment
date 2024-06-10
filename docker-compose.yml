@@ -42,7 +42,7 @@ services:
     container_name: nifi
     environment:
       - SINGLE_USER_CREDENTIALS_USERNAME=admin
-      - SINGLE_USER_CREDENTIALS_PASSWORD=61PtwDe1dpLj0aPBqOyeM
+      - SINGLE_USER_CREDENTIALS_PASSWORD=admin
       - NIFI_WEB_HTTP_PORT=8888
       - NIFI_WEB_HTTP_HOST=0.0.0.0
     networks:
