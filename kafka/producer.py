@@ -25,11 +25,12 @@ def push_to_topic(file_path, topic_name):
             time.sleep(1)
 
 
-producer = KafkaProducer(bootstrap_servers=[BOOTSTRAP_SERVER],
-                         value_serializer=json_serializer)
+if __name__ == '__main__':
+    producer = KafkaProducer(bootstrap_servers=[BOOTSTRAP_SERVER],
+                             value_serializer=json_serializer)
 
-csv_file_path = '../data/log_action.csv'
-topic_name = "vdt2024"
-push_to_topic(csv_file_path, topic_name)
+    csv_file_path = '../data/log_action.csv'
+    topic_name = "vdt2024"
+    push_to_topic(csv_file_path, topic_name)
 
-producer.close()
+    producer.close()
