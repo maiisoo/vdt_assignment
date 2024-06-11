@@ -23,14 +23,14 @@ def process_result(join_df, name):
 
     # Save output
     file_name = transform_name(name)
-    # Save to HDFS
-    # save_path = f"{HDFS_PATH}/result/{file_name}"
-    # result_df.repartition(1).write \
-    #     .mode("overwrite") \
-    #     .option("header", "true") \
-    #     .csv(save_path)
-    # Save to local
-    result_df.coalesce(1).write \
+        # Save to HDFS
+    save_path = f"{HDFS_PATH}/result/{file_name}"
+    result_df.repartition(1).write \
+        .mode("overwrite") \
+        .option("header", "true") \
+        .csv(save_path)
+        # Save to local
+    result_df.repartition(1).write \
         .mode("overwrite") \
         .option("header", "true") \
         .csv(f"result/{file_name}.csv")
